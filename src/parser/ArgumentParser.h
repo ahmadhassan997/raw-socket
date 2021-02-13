@@ -5,9 +5,15 @@
 #ifndef RAWSOCKET_ARGUMENTPARSER_H
 #define RAWSOCKET_ARGUMENTPARSER_H
 
+#include <boost/program_options.hpp>
+#include "../../include/ProgramConfig.h"  // TODO: fix this in cmake
+#include "../../include/ProgramState.h"  // TODO: fix this in cmake
 
-class ArgumentParser {
+namespace po = boost::program_options;
 
+class Parser {
+public:
+    
 };
 
 

@@ -15,3 +15,7 @@
 
 # cmake build files
 cmake-build-debug
+build
+
+# IDE files
+.vscode

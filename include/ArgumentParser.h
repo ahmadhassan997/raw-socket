@@ -6,8 +6,9 @@
 #define RAWSOCKET_ARGUMENTPARSER_H
 
 #include <boost/program_options.hpp>
-#include "../../include/ProgramConfig.h"  // TODO: fix this in cmake
-#include "../../include/ProgramState.h"  // TODO: fix this in cmake
+
+#include "ProgramConfig.h"  // TODO: fix this in cmake
+#include "ProgramState.h"  // TODO: fix this in cmake
 
 namespace po = boost::program_options;
 

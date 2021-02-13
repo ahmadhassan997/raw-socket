@@ -1,3 +1,4 @@
 // the configured options and settings for Raw Socket
-#define RawSocket_VERSION_MAJOR @RawSocket_VERSION_MAJOR@
-#define RawSocket_VERSION_MINOR @RawSocket_VERSION_MINOR@
+#define rawsocket_VERSION_MAJOR @rawsocket_VERSION_MAJOR@
+#define rawsocket_VERSION_MINOR @rawsocket_VERSION_MINOR@
+#define rawsocket_VERSION_PATCH @rawsocket_VERSION_PATCH@

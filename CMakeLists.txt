@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project("RawSocket" VERSION 1.0.0
+project("rawsocket" VERSION 1.0.0
                     DESCRIPTION "Transport protocol implementations using linux raw socket")
 
 # specify the C++ standard
@@ -11,5 +11,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 configure_file(VersionConfig.h.in VersionConfig.h)
 
 # add subdirectries
-add_subdirectory(src/parser)
-add_subdirectory(src/rawsocket)
+add_subdirectory(src)

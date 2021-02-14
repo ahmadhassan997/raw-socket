@@ -19,3 +19,5 @@ build
 
 # IDE files
 .vscode
+.ccls
+.clang-format

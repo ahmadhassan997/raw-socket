@@ -1,7 +1,6 @@
 //
 // Created by ahmad on 2/9/21.
 //
-#include <iostream>
 
 #include "Parser.h"
 
@@ -11,17 +10,22 @@
  */
 Parser::Parser() {
     // Declare supported options
-    desc = new po::options_description("Available Options");
+    std::string program_desc = "rawsocket Version " + std::to_string(rawsocket_VERSION_MAJOR) + "." 
+                                + std::to_string(rawsocket_VERSION_MINOR) + "." + std::to_string(rawsocket_VERSION_PATCH) + "\n\n"
+                                + "Usage as client: ./rawsocket -c ip:port [options]\n"
+                                + "Usage as server: ./rawsocket -s ip:port [options]\n\n"
+                                + "Available Options";
+    desc = new po::options_description(program_desc);
     desc->add_options()
         ("help,h", "print help message")
-        ("client,c", "run in client mode")
-        ("server,s", "run in server mode")
-        ("listen,l", po::value<std::string>(), "ip address and port to listen on (for server)")
-        ("remote,r", po::value<std::string>(), "ip address and port to connect to (for client)")
+        ("server,s", po::value<std::string>(), "ip address and port to listen on (for server)")
+        ("client,c", po::value<std::string>(), "ip address and port to connect to (for client)")
         ("auto-ip-rule,a", "add/delete iptable rules automatically for raw socket mode")
         ("gen-ip-rule,g", "generate and print iptable rules for raw socket mode")
-        ("raw-mode", po::value<std::string>(), "raw socket type: raw-tcp[default], raw-udp, raw-icmp, tcp, udp, icmp")
-        ("log-level", po::value<std::string>(), "log level: never, error, warn, info[default], debug, verbose")
+        ("raw-mode", po::value<std::string>()->default_value("raw-tcp"), 
+                                "raw socket type: raw-tcp[default], raw-udp, raw-icmp, tcp, udp, icmp")
+        ("log-level", po::value<std::string>()->default_value("info"), 
+                                "log level: never, error, warn, info[default], debug, verbose")
         ("log-position", "enable file name, function name and line name in logs")
         ("source-ip", po::value<std::string>(), "source ip address (for client)")
         ("source-port", po::value<std::string>(), "source port for client")
@@ -29,7 +33,7 @@ Parser::Parser() {
 }
 
 /**
- * @brief Parse Arguments from command line
+ * @brief Parse arguments from command line
  * 
  * @param argc 
  * @param argv 
@@ -56,7 +60,12 @@ po::variables_map Parser::parseArgs(int argc, char* argv[]) {
     }
 }
 
-
+/**
+ * @brief Parse arguments from a Config file
+ * 
+ * @param file_name path to Config file
+ * @return po::variables_map 
+ */
 po::variables_map Parser::parseArgs(std::string file_name) {
     // TODO
 }

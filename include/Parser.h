@@ -7,6 +7,7 @@
 
 #include <boost/program_options.hpp>
 #include <string>
+#include <iostream>
 
 #include "VersionConfig.h"
 #include "ProgramConfig.h"
@@ -21,6 +22,8 @@ public:
     po::variables_map parseArgs(int argc, char* argv[]);
     /// load settings from config file
     po::variables_map parseArgs(std::string file_name);
+    /// store parsed variables in program state object
+    ProgramState storeParsedArgs(po::variables_map vm);
 private:
     po::options_description *desc;
 };

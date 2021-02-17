@@ -13,11 +13,14 @@ add_executable(${PROJECT_NAME} rawsocket/main.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC
     ${PROJECT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/parser
-    
+    ${CMAKE_CURRENT_SOURCE_DIR}/log
+    ${CMAKE_CURRENT_SOURCE_DIR}/state
 )
 
 # link the librares with executable
 target_link_libraries(${PROJECT_NAME} PUBLIC
     parser
     Boost::program_options
+    log
+    programstate
 )

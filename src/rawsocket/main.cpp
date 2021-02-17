@@ -4,11 +4,13 @@
 #include <iostream>
 #include "Parser.h"
 #include "Log.h"
+#include "ProgramState.h"
 
 int main(int argc, char* argv[])
 {
     Parser cmd_parser;
-    po::variables_map vm = cmd_parser.parseArgs(argc, argv);
+    cmd_parser.parseArgs(argc, argv);
+    ProgramState current_program_state = cmd_parser.storeArgs();
     return 0;
 }
 

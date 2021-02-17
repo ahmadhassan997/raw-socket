@@ -18,7 +18,6 @@ public:
     SocketMode socketMode = SocketMode::mode_none;
     Log log;
 
-    ProgramState();
 };
 
 #endif //RAWSOCKET_PROGRAMSTATE_H

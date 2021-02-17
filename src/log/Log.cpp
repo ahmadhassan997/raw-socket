@@ -30,6 +30,15 @@ void Log::setLogInfo(int _level, bool _pos, bool _color) {
 }
 
 /**
+ * @brief update log level
+ * 
+ * @param _level log level
+ */
+void Log::setLogInfo(int _level) {
+    Log::log_level = _level;
+}
+
+/**
  * @brief print logs on terminal based on log level
  * 
  * @param level level to print at

@@ -12,6 +12,7 @@
 #include "VersionConfig.h"
 #include "ProgramConfig.h"
 #include "ProgramState.h"
+#include "Log.h"
 
 namespace po = boost::program_options;
 
@@ -19,14 +20,18 @@ class Parser {
 public:
     Parser();
     /// load settings from command line arguments
-    po::variables_map parseArgs(int argc, char* argv[]);
+    void parseArgs(int argc, char* argv[]);
     /// load settings from config file
-    po::variables_map parseArgs(std::string file_name);
-    /// store argument values in program state object and do
-    /// error checking
-    ProgramState storeArgs(po::variables_map);
+    void parseArgs(std::string file_name);
+    /// store argument values in program state object and do error checking
+    ProgramState storeArgs();
+    /// print usage
+    inline void printUsage() {
+        std::cout << std::endl << *desc << std::endl;
+    }
 private:
     po::options_description *desc;
+    po::variables_map vm;
 };
 
 

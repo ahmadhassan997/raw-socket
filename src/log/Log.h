@@ -43,6 +43,9 @@ public:
     /// set log level, color, position
     static void setLogInfo(int, bool, bool);
 
+    /// set log level
+    static void setLogInfo(int);
+
     /// print on screen with given log level
     static void logStdout(int level, const char*, ...);
 

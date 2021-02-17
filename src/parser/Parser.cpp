@@ -78,5 +78,5 @@ po::variables_map Parser::parseArgs(std::string file_name) {
  * @return ProgramState 
  */
 ProgramState Parser::storeArgs(po::variables_map vm) {
-
+    
 }

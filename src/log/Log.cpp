@@ -37,7 +37,7 @@ void Log::setLogInfo(int _level, bool _pos, bool _color) {
  * @param ... additional args
  */
 void Log::logStdout(int level, const char* str, ...) {
-    if (level < 0 || level > LogLevel::never) return;
+    if (level < 0 || level > LogLevel::verbose) return;
     // make sure log level is less than the configured log level
     if (level > log_level) return;
     if (enable_log_color) {  // change color of stdout

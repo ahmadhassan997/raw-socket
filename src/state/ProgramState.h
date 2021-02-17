@@ -8,9 +8,9 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 
+#include "Log.h"
 #include "States.h"
 #include "Modes.h"
-#include "../log/Log.h"
 
 class ProgramState {
 public:

@@ -42,7 +42,7 @@ enum class ClientState {
  * union will only store only one of the two objects in memory
  * at the same location
  */
-union ProgramState {
+union ProgramCurrentState {
     /// current state if client program running
     ClientState client_state;
     /// current state if server program running

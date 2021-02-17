@@ -47,16 +47,24 @@ po::variables_map Parser::parseArgs(int argc, char* argv[]) {
     }
     else   // parse the command line arguments
     {
-        po::variables_map vm;
-        po::store(po::parse_command_line(argc, argv, *desc), vm);
-        po::notify(vm);
+        try
+        {
+            po::variables_map vm;
+            po::store(po::parse_command_line(argc, argv, *desc), vm);
+            po::notify(vm);
 
-        // do error handling and store args
-        if (vm.count("help")) {
+            if (vm.count("help")) {
+                std::cout << *desc << std::endl;
+                exit(0);
+            }
+            return vm;
+        }
+        catch(po::error e)  // print usage
+        {
+            std::cerr << e.what() << '\n' << '\n';
             std::cout << *desc << std::endl;
             exit(0);
         }
-        return vm;
     }
 }
 

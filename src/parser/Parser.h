@@ -22,8 +22,9 @@ public:
     po::variables_map parseArgs(int argc, char* argv[]);
     /// load settings from config file
     po::variables_map parseArgs(std::string file_name);
-    /// store parsed variables in program state object
-    ProgramState storeParsedArgs(po::variables_map vm);
+    /// store argument values in program state object and do
+    /// error checking
+    ProgramState storeArgs(po::variables_map);
 private:
     po::options_description *desc;
 };

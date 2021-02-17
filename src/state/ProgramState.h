@@ -5,14 +5,20 @@
 #ifndef RAWSOCKET_PROGRAMSTATE_H
 #define RAWSOCKET_PROGRAMSTATE_H
 
+#include <boost/program_options.hpp>
+#include <iostream>
+
 #include "States.h"
 #include "Modes.h"
+#include "../log/Log.h"
 
 class ProgramState {
 public:
     ProgramMode programMode = ProgramMode::mode_unset;
     SocketMode socketMode = SocketMode::mode_none;
-    LogLevel logLevel = LogLevel::none;
+    Log log;
+
+    ProgramState();
 };
 
 #endif //RAWSOCKET_PROGRAMSTATE_H

@@ -69,3 +69,14 @@ po::variables_map Parser::parseArgs(int argc, char* argv[]) {
 po::variables_map Parser::parseArgs(std::string file_name) {
     // TODO
 }
+
+/**
+ * @brief Store parsed args in program state object.
+ * Do error checking and print relevent messages.
+ * 
+ * @param vm variable map of args
+ * @return ProgramState 
+ */
+ProgramState Parser::storeArgs(po::variables_map vm) {
+
+}

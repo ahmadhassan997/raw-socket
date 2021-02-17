@@ -37,18 +37,5 @@ enum class ProgramMode {
     mode_server 
 };
 
-/**
- * @brief log level to print messages on screen
- * 
- */
-enum class LogLevel {
-    none,
-    never,
-    error,
-    warn,
-    info,
-    debug,
-    verbose    
-};
 
 #endif //RAWSOCKET_MODES_H

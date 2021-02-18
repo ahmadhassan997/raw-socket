@@ -23,10 +23,10 @@ Parser::Parser() {
         ("client,c", po::value<std::string>(), "ip address and port to connect to (for client)")
         ("auto-ip-rule,a", "add/delete iptable rules automatically for raw socket mode")
         ("gen-ip-rule,g", "generate and print iptable rules for raw socket mode")
-        ("raw-mode", po::value<std::string>()->default_value("raw-tcp"),  // TODO: set default value in config file
+        ("raw-mode", po::value<std::string>()->default_value(DEFAULT_RAW_MODE),
                                 "raw socket type:\n" 
                                 "  \traw-tcp, raw-udp, raw-icmp, tcp, udp, icmp")
-        ("log-level", po::value<std::string>()->default_value("info"),   // TODO: set default value in config file
+        ("log-level", po::value<std::string>()->default_value(DEFAULT_LOG_LEVEL),
                                 "log level:\n" 
                                 "  \tnever, error, warn, info, debug, verbose")
         ("log-position", "enable file name, function name and line name in logs")
@@ -150,7 +150,6 @@ ProgramState Parser::storeArgs() {
     }
 
     // parse log level
-    // never, error, warn, info, debug, verbose
     if (vm.count("log-level")) {
         std::string log_level = vm["log-level"].as<std::string>();
         if (log_level == "never") {
@@ -182,7 +181,6 @@ ProgramState Parser::storeArgs() {
             exit(0);
         }
     }
-
 
     return program_state;
 }

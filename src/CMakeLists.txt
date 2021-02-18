@@ -1,10 +1,8 @@
-# set directory for source files
-set(SOURCE_FILES_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-
 # add sub-directories
 add_subdirectory(parser)
 add_subdirectory(state)
 add_subdirectory(log)
+add_subdirectory(rules)
 
 # add the executable
 add_executable(${PROJECT_NAME} rawsocket/main.cpp)
@@ -15,6 +13,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/parser
     ${CMAKE_CURRENT_SOURCE_DIR}/log
     ${CMAKE_CURRENT_SOURCE_DIR}/state
+    ${CMAKE_CURRENT_SOURCE_DIR}/rules
 )
 
 # link the librares with executable
@@ -23,4 +22,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     Boost::program_options
     log
     programstate
+    rules
 )

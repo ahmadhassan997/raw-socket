@@ -3,6 +3,7 @@ add_subdirectory(parser)
 add_subdirectory(state)
 add_subdirectory(log)
 add_subdirectory(rules)
+add_subdirectory(common)
 
 # add the executable
 add_executable(${PROJECT_NAME} rawsocket/main.cpp)

@@ -17,7 +17,8 @@ public:
     ProgramMode programMode = ProgramMode::mode_unset;
     SocketMode socketMode = SocketMode::mode_none;
     Log log;
-
+    bool genIprules = false;
+    bool addIprules = false;
 };
 
 #endif //RAWSOCKET_PROGRAMSTATE_H

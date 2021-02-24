@@ -1,5 +1,13 @@
 clang++
 -I
 include
+-I
+src/log
+-I
+src/state
+-I
+src/parser
+-I
+src/rawsocket
 %cpp -std=c++2a
 %h c++-header

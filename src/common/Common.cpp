@@ -45,3 +45,29 @@ int Common::executeCommand(const char* command, char* &output) {
 
     return 0;
 }
+
+u32_t djb2(unsigned char *str,int len)
+{
+	 u32_t hash = 5381;
+     int c;
+     int i=0;
+    while(c = *str++,i++!=len)
+    {
+         hash = ((hash << 5) + hash)^c;
+    }
+
+     hash=htonl(hash);
+     return hash;
+}
+
+u32_t sdbm(unsigned char *str,int len)
+{
+     u32_t hash = 0;
+     int c;
+     int i=0;
+	while(c = *str++,i++!=len)
+	{
+		 hash = c + (hash << 6) + (hash << 16) - hash;
+	}
+     return hash;
+ }

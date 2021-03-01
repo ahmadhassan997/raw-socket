@@ -222,19 +222,3 @@ bool larger_than_u16(uint16_t a,uint16_t b)
 {
 	return ((i16_t(a-b)) >0);
 }
-void setnonblocking(int sock) {
-	int opts;
-	opts = fcntl(sock, F_GETFL);
-
-	if (opts < 0) {
-    	mylog(log_fatal,"fcntl(sock,GETFL)\n");
-		//perror("fcntl(sock,GETFL)");
-		myexit(1);
-	}
-	opts = opts | O_NONBLOCK;
-	if (fcntl(sock, F_SETFL, opts) < 0) {
-    	mylog(log_fatal,"fcntl(sock,SETFL,opts)\n");
-		//perror("fcntl(sock,SETFL,opts)");
-		myexit(1);
-	}
-}

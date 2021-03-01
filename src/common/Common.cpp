@@ -4,6 +4,8 @@
 
 #include "Common.h"
 
+int force_socket_buf=0;
+
 int Common::executeCommand(const char* command, char* &output) {
     
     FILE *in;
